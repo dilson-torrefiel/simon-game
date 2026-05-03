@@ -37,8 +37,8 @@ function reStart() {
   player = [];
   level = 0;
   activateNext();
-  $(".heading h2").addClass("hide");
   $(".score")[0].innerText = "Level: " + level;
+  $(".heading h2")[0].innerText = "";
   $(".heading h2").addClass("hide");
 }
 
