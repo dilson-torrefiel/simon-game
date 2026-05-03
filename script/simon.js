@@ -21,9 +21,11 @@ function activateNext() {
 
   if ($(pads[random]).hasClass("active") === false) {
     $(pads[random]).addClass("active");
+    $(pads[random]).addClass("b-pad");
   }
   setTimeout(() => {
     $(pads[random]).removeClass("active");
+    $(pads[random]).removeClass("b-pad");
   }, 600);
   memory.push(random);
   $(".start").addClass("hide");
@@ -100,8 +102,11 @@ function gameOver(computer, human) {
  */
 function animateZoom(event) {
   $("#" + event).addClass("zoom");
+  $("#" + event).addClass("b-pad");
+
   setTimeout(() => {
     $("#" + event).removeClass("zoom");
+    $("#" + event).removeClass("b-pad");
   }, 500);
 }
 

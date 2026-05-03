@@ -46,6 +46,11 @@ body {
     opacity 0.1s,
     transform 0.1s;
 }
+.b-pad {
+  border-style: solid;
+  border-width: 4px;
+  border-color: whitesmoke;
+}
 
 /* Rounding specific corners to create the inner circle effect */
 .green {
@@ -112,11 +117,29 @@ div {
 .hide {
   display: none;
 }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.footer-container h1,
+p {
+  color: #303643;
+}
 
-@media (min-width: 500px) {
+@media (min-width: 500px) and (max-width: 1200px) {
   .simon-board {
     grid-template-columns: 200px 200px;
     grid-template-rows: 200px 200px;
     width: 455px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .game-container {
+    padding: 5% 30%;
   }
 }
