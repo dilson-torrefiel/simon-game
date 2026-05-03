@@ -24,16 +24,17 @@ function activateNext() {
   if ($(pads[random]).hasClass("active") === false) {
     $(pads[random]).addClass("active");
     $(pads[random]).addClass("b-pad");
+    playSound($(pads)[random].id);
   }
   setTimeout(() => {
     $(pads[random]).removeClass("active");
     $(pads[random]).removeClass("b-pad");
-  }, 600);
+  }, 1000);
   memory.push(random);
   $(".start").addClass("hide");
 }
 
-/**
+/**1);
  * Re start Game and reset data in memory
  */
 function reStart() {
@@ -83,7 +84,7 @@ function levelUp(computer, human) {
  */
 function gameOver(computer, human) {
   if (computer.length === human.length) {
-    if (isMatch == false) {
+    if (isMatch === false) {
       $(".heading h2")[0].innerText = "Game Over!";
 
       // Making it blink multiple times using a loop
