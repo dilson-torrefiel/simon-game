@@ -7,6 +7,7 @@ let memory = [];
 let player = [];
 let isMatch = false;
 let level = 0;
+let isGameStart = false;
 $(".score")[0].innerText = "Level: " + level;
 
 /**
@@ -14,6 +15,7 @@ $(".score")[0].innerText = "Level: " + level;
  * @returns computer next pattern
  */
 function activateNext() {
+  isGameStart = true;
   const min = 0;
   const max = 3;
   const random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -48,11 +50,13 @@ function reStart() {
  * Event Listener to player's clicks
  */
 $(".pad").on("click", function (event) {
-  player.push(Number(event.target.attributes[1].nodeValue));
-  animateZoom(event.target.id);
-  playSound(event.target.id);
-  levelUp(memory, player);
-  gameOver(memory, player);
+  if (isGameStart) {
+    player.push(Number(event.target.attributes[1].nodeValue));
+    animateZoom(event.target.id);
+    playSound(event.target.id);
+    levelUp(memory, player);
+    gameOver(memory, player);
+  }
 });
 
 /**
