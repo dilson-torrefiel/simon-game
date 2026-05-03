@@ -1,0 +1,122 @@
+body {
+  background: linear-gradient(90deg, #62bfd4, #f1dd76);
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+.heading h1 {
+  color: #303643;
+}
+.heading p {
+  color: #997300;
+}
+.heading h2 {
+  color: #e52b2b;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10% 20%;
+}
+.simon-board {
+  display: grid;
+  grid-template-columns: 160px 160px;
+  grid-template-rows: 160px 160px;
+  gap: 15px;
+  background: linear-gradient(180deg, #a5acb9, #303643);
+  width: 375px;
+  padding: 20px;
+  border-radius: 50%; /* Makes the whole board circular */
+  position: relative;
+}
+
+/* Individual Pads */
+.pad {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition:
+    opacity 0.1s,
+    transform 0.1s;
+}
+
+/* Rounding specific corners to create the inner circle effect */
+.green {
+  background: linear-gradient(180deg, #226214, #43cc25);
+  border-top-left-radius: 100%;
+  transition:
+    transform 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.red {
+  background: linear-gradient(270deg, #731919, #e52b2b);
+  border-top-right-radius: 100%;
+  transition:
+    transform 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.yellow {
+  background: linear-gradient(90deg, #997300, #ffc000);
+  border-bottom-left-radius: 100%;
+  transition:
+    transform 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.blue {
+  background: linear-gradient(0deg, #001f65, #6895fd);
+  border-bottom-right-radius: 100%;
+  transition:
+    transform 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+/* The state added when clicked */
+.zoom {
+  /* scale(1.1) makes it 10% larger */
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* The "lit up" state for animations */
+.active {
+  opacity: 1;
+  transform: scale(0.98);
+  box-shadow: 0 0 20px white;
+}
+.center-control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(180deg, #a5acb9, #303643);
+  border-radius: 50%;
+  border: 10px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.center-control h2,
+div {
+  color: whitesmoke;
+}
+.hide {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .simon-board {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    width: 455px;
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simon game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h1 class="display-4">Simon Game</h1>
+      <p class="display-6">Let's test your Memory!</p>
+      <h2 class="display-2"></h2>
+    </div>
+    <div class="game-container">
+      <div class="simon-board">
+        <!-- The 4 game buttons -->
+        <div class="pad green" value="0" id="green"></div>
+        <div class="pad red" value="1" id="red"></div>
+        <div class="pad yellow" value="2" id="yellow"></div>
+        <div class="pad blue" value="3" id="blue"></div>
+
+        <!-- The center control unit -->
+        <div class="center-control">
+          <h2 class="h3">Simon</h2>
+          <div class="score lead">Level: 0</div>
+          <button
+            id="start-btn"
+            onclick="activateNext()"
+            class="start btn btn-primary"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./script/simon.js" defer></script>
+</html>
