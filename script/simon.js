@@ -27,14 +27,16 @@ function activateNext() {
     $(pads[random]).addClass("b-pad");
     playSound($(pads)[random].id);
   }
+  if (level > 0) {
+    $(".heading h2")[0].innerText =
+      message[Math.floor(Math.random() * message.length)];
+  }
   setTimeout(() => {
     $(pads[random]).removeClass("active");
     $(pads[random]).removeClass("b-pad");
   }, 1000);
   memory.push(random);
   $(".start").addClass("hide");
-  $(".heading h2")[0].innerText =
-    message[Math.floor(Math.random() * message.length)];
 }
 
 /**1);
