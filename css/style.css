@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10% 20%;
+  padding: 5% 20%;
 }
 .simon-board {
   display: grid;
@@ -129,17 +129,29 @@ div {
 p {
   color: #303643;
 }
-
+#accordion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 @media (min-width: 500px) and (max-width: 1200px) {
   .simon-board {
     grid-template-columns: 200px 200px;
     grid-template-rows: 200px 200px;
     width: 455px;
   }
+  #accordion {
+    padding: 0px 15%;
+  }
 }
 
 @media (min-width: 1201px) {
   .game-container {
-    padding: 5% 30%;
+    padding: 2% 30%;
+  }
+  #accordion {
+    padding: 0px 30%;
   }
 }

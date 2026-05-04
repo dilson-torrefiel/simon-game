@@ -8,6 +8,7 @@ let player = [];
 let isMatch = false;
 let level = 0;
 let isGameStart = false;
+const message = ["Great!", "Awesome!", "Keep it up!", "You are doing great!"];
 $(".score")[0].innerText = "Level: " + level;
 
 /**
@@ -32,6 +33,8 @@ function activateNext() {
   }, 1000);
   memory.push(random);
   $(".start").addClass("hide");
+  $(".heading h2")[0].innerText =
+    message[Math.floor(Math.random() * message.length)];
 }
 
 /**1);
