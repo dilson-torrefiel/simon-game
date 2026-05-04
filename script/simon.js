@@ -48,8 +48,7 @@ function reStart() {
   level = 0;
   activateNext();
   $(".score")[0].innerText = "Level: " + level;
-  $(".heading h2")[0].innerText = "";
-  $(".heading h2").addClass("hide");
+  $(".heading h2")[0].innerText = "Play again!";
 }
 
 /**
